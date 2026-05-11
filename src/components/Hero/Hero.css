@@ -1,0 +1,240 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  margin-bottom: 30px;
+}
+
+.hero__slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero__slide--active {
+  opacity: 1;
+}
+
+.hero__slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 26, 58, 0.88) 0%,
+    rgba(30, 58, 138, 0.75) 50%,
+    rgba(29, 78, 216, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  padding-top: 5rem;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full);
+  color: var(--white);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.6s ease;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  max-width: 600px;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.hero__subtitle {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.hero__stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-sm);
+}
+
+.hero__stat-icon {
+  font-size: 1.1rem;
+}
+
+.hero__stat-value {
+  font-weight: 700;
+  color: var(--white);
+}
+
+.hero__stat-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.hero__cta:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.hero__dots {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.hero__dot--active {
+  width: 32px;
+  border-radius: 5px;
+  background: var(--cyan-400);
+}
+
+.hero__search-wrapper {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 100%;
+  max-width: 700px;
+  padding: 0 1.5rem;
+}
+
+.hero__search {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.hero__search-icon {
+  padding: 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.hero__search-input {
+  flex: 1;
+  padding: 1rem 0.5rem;
+  font-size: var(--font-size-base);
+  color: var(--slate-700);
+  background: transparent;
+}
+
+.hero__search-input::placeholder {
+  color: var(--slate-400);
+}
+
+.hero__search-btn {
+  padding: 0.875rem 2rem;
+  background: var(--primary-600);
+  color: var(--white);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.hero__search-btn:hover {
+  background: var(--primary-700);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .hero__stats {
+    gap: 1rem;
+  }
+
+  .hero__stat {
+    font-size: var(--font-size-xs);
+  }
+
+  .hero__search-wrapper {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 550px;
+  }
+
+  .hero__cta {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--font-size-sm);
+  }
+}

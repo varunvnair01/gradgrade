@@ -1,0 +1,209 @@
+.about-page__hero {
+  padding: 8rem 0 5rem;
+  background: var(--gradient-hero);
+  text-align: center;
+  color: var(--white);
+}
+
+.about-page__badge {
+  display: inline-block;
+  padding: 0.4rem 1.25rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--cyan-400);
+  margin-bottom: 1.5rem;
+}
+
+.about-page__hero h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.about-page__hero p {
+  font-size: var(--font-size-lg);
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-page__mission {
+  padding: var(--section-padding);
+}
+
+.about-page__mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.about-page__mission-card {
+  padding: 2.5rem 2rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--slate-100);
+}
+
+.about-page__mission-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-page__mission-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-page__mission-card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.about-page__mission-card p {
+  font-size: var(--font-size-sm);
+  color: var(--slate-500);
+  line-height: 1.7;
+}
+
+.about-page__timeline {
+  padding: var(--section-padding);
+  background: var(--slate-50);
+}
+
+.about-page__timeline-items {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-page__timeline-items::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-200);
+  transform: translateX(-50%);
+}
+
+.about-page__timeline-item {
+  position: relative;
+  padding: 1.5rem 0;
+  display: flex;
+}
+
+.about-page__timeline-item--left {
+  justify-content: flex-start;
+  padding-right: 55%;
+}
+
+.about-page__timeline-item--right {
+  justify-content: flex-end;
+  padding-left: 55%;
+}
+
+.about-page__timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-600);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 0 0 4px var(--primary-200);
+}
+
+.about-page__timeline-content {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-page__timeline-year {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  background: var(--primary-100);
+  color: var(--primary-700);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
+}
+
+.about-page__timeline-content h4 {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.about-page__timeline-content p {
+  font-size: var(--font-size-sm);
+  color: var(--slate-500);
+}
+
+.about-page__team {
+  padding: var(--section-padding);
+}
+
+.about-page__team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.about-page__team-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.about-page__team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-page__team-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-page__team-card h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about-page__team-card p {
+  font-size: var(--font-size-sm);
+  color: var(--slate-500);
+}
+
+@media (max-width: 768px) {
+  .about-page__hero h1 { font-size: var(--font-size-3xl); }
+  .about-page__mission-grid,
+  .about-page__team-grid { grid-template-columns: 1fr; }
+  .about-page__timeline-items::before { left: 20px; }
+  .about-page__timeline-item--left,
+  .about-page__timeline-item--right {
+    padding-left: 50px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  .about-page__timeline-dot { left: 20px; }
+}
